@@ -14,54 +14,68 @@ from Bio.SeqUtils.CheckSum import seguid
 
 
 def numberRecords(ListRecords):
-    #Function rints number of records
+    #Function prints number of records
     records = list(SeqIO.parse(ListRecords, "genbank"))
-    print("Found %i records" % len(records))
+    print("Found %i records in initial file: " % len(records))
 
-#numberRecords("arc_sequences_04202020.gp")
+numberRecords("arc_sequences_04202020.gp")
 
+file = open("AllSpecies.fasta", "w")
 
 def Classify(ListRecords):
     #assigns group, prints with sequence
+
     counter = 0
+    counterRecs = 0
+
     for seq_record in SeqIO.parse(ListRecords, "gb"):
+
+        sequence = str(seq_record.seq)
+        assignment = "UNASSIGNED FIX ME"
+
         if seq_record.annotations["taxonomy"][2] == "Ecdysozoa":  #classify as invertebrate
-            print(seq_record.annotations["source"] + ", (I)")
+            assignment = "(I)"
 
         elif seq_record.annotations["taxonomy"][6] == "Amphibia":  # classify as amphibia
-            print(seq_record.annotations["source"] + ", (A)")
+            assignment = "(A)"
 
         elif seq_record.annotations["taxonomy"][6] == "Actinopterygii":  # classify as fish
-            print(seq_record.annotations["source"] + ", (F)")
+            assignment = "(F)"
 
         elif seq_record.annotations["taxonomy"][6] == "Archelosauria":  # classify as reptile or bird
             if seq_record.annotations["taxonomy"][11] == "Coelurosauria" or seq_record.annotations["taxonomy"][11] == "Aves": #bird
-                print(seq_record.annotations["source"] + ", (B)")
+                assignment = "(B)"
+
             else:
-                print(seq_record.annotations["source"] + ", (R)")
+                assignment = "(R)"
 
         elif seq_record.annotations["taxonomy"][6] == "Archosauria":  # classify as bird
             if seq_record.annotations["taxonomy"][11] == "Aves":  # bird
-                print(seq_record.annotations["source"] + ", (B)")
+                assignment = "(B)"
             else:
-                print(seq_record.annotations["source"] + ", UNCLASSIFIED FIX ME")
                 counter = counter + 1
 
         elif seq_record.annotations["taxonomy"][6] == "Lepidosauria" or  seq_record.annotations["taxonomy"][6] == "Testudines + Archosauria group":
-            print(seq_record.annotations["source"] + ", (R)")
+            assignment = "(R)"
 
         elif seq_record.annotations["taxonomy"][6] == "Mammalia":
             if seq_record.annotations["taxonomy"][9] == "Primates":
-                print(seq_record.annotations["source"] + ", (P)")
-            else:
-                print(seq_record.annotations["source"] + ", (M)")
-        else:
-            print(seq_record.annotations["source"] + ", UNCLASSIFIED FIX ME")
-            counter = counter + 1
-        print(seq_record.seq)
+                assignment = "(P)"
 
+            else:
+                assignment = "(M)"
+
+        else:
+            print(seq_record.annotations["source"] + ", UNCLASSIFIED FIX ME\n")
+            counter = counter + 1
+
+        file.write(">" + seq_record.annotations["source"] + ", " + assignment + "\n")
+        file.write(sequence + "\n")
+        counterRecs = counterRecs + 1
 
     print("Number of unclassified species:", counter)
+    print("Number of records written to file: ", counterRecs)
+    file.close()
 
 Classify("arc_sequences_04202020.gp")
 
