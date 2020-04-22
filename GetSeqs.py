@@ -14,8 +14,28 @@ def numberRecords(ListRecords):
     records = list(SeqIO.parse(ListRecords, "genbank"))
     print("Found %i records in initial file " % len(records))
 
-def CheckIfDuplicate(first_sequence, second_sequece):
-    pass
+def CheckIfDuplicate(first_sequence, second_sequence):
+## returns 0 (same sequences), 1 (not same sequences, or 3 (something went wrong, function didn't work
+    return_value = 3
+
+    # if same species AND length of sequence is the same, check if the sequence is the same
+    if (first_sequence == second_sequence) and (first_sequence == second_sequence):
+        if first_sequence == second_sequence:
+            return_value = 0  #same sequences
+        else:
+            return_value = 1
+    else:
+        return_value = 1
+
+    return(return_value)
+
+def unknown_aas(sequence):
+    #returns number of unknown amino acids in sequence
+    X_in_sequence = 0
+
+    if 'X' in sequence:
+        X_in_sequence = X_in_sequence + 1
+    return X_in_sequence
 
 numberRecords("arc_sequences_04202020.gp")
 
@@ -26,62 +46,79 @@ def Classify(ListRecords):
 
     counter = 0
     counterRecs = 0
+    duplicates = 0
     old_sequence_name = "empty"
     old_sequence_length = 0
+    old_sequence = "no sequence yet"
     new_sequence_name = "empty2"
     new_sequence_length = 0
     sequence_title = "error! check what happened here"
 
-    for seq_record in SeqIO.parse(ListRecords, "gb"):
+    for seq_record in SeqIO.parse(ListRecords, "gb"):  #for every record in the list
 
-        sequence = str(seq_record.seq) + "\n"
+        duplicates = duplicates + 1
+
+# setting up initial vatiables
+        new_sequence_name = str(seq_record.seq) + "\n"
         new_sequence_length = len(seq_record)
+        new_sequence = str(seq_record.seq)
+
         assignment = "UNASSIGNED FIX ME"
+        Number_of_X = unknown_aas(new_sequence)
 
-        if (new_sequence_name == old_sequence_name) and (new_sequence_length == old_sequence_length):
-            CheckIfDuplicate(old_sequence, new_sequence)
+        if (CheckIfDuplicate(old_sequence, new_sequence) == 1) and (Number_of_X == 0):  # if not the same and no unknown aas (X), continue
 
-        if seq_record.annotations["taxonomy"][2] == "Ecdysozoa":  #classify as invertebrate
-            assignment = "(I)"
+            duplicates = duplicates - 1
 
-        elif seq_record.annotations["taxonomy"][6] == "Amphibia":  # classify as amphibia
-            assignment = "(A)"
+#Classification block begins~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            if seq_record.annotations["taxonomy"][2] == "Ecdysozoa":  #classify as invertebrate
+                assignment = "(I)"
 
-        elif seq_record.annotations["taxonomy"][6] == "Actinopterygii":  # classify as fish
-            assignment = "(F)"
+            elif seq_record.annotations["taxonomy"][6] == "Amphibia":  # classify as amphibia
+                assignment = "(A)"
 
-        elif seq_record.annotations["taxonomy"][6] == "Archelosauria":  # classify as reptile or bird
-            if seq_record.annotations["taxonomy"][11] == "Coelurosauria" or seq_record.annotations["taxonomy"][11] == "Aves": #bird
-                assignment = "(B)"
+            elif seq_record.annotations["taxonomy"][6] == "Actinopterygii":  # classify as fish
+                assignment = "(F)"
 
-            else:
+            elif seq_record.annotations["taxonomy"][6] == "Archelosauria":  # classify as reptile or bird
+                if seq_record.annotations["taxonomy"][11] == "Coelurosauria" or seq_record.annotations["taxonomy"][11] == "Aves": #bird
+                    assignment = "(B)"
+                else:
+                    assignment = "(R)"
+
+            elif seq_record.annotations["taxonomy"][6] == "Archosauria":  # classify as bird
+                if seq_record.annotations["taxonomy"][11] == "Aves":  # bird
+                    assignment = "(B)"
+                else:
+                    counter = counter + 1
+
+            elif seq_record.annotations["taxonomy"][6] == "Lepidosauria" or  seq_record.annotations["taxonomy"][6] == "Testudines + Archosauria group":
                 assignment = "(R)"
 
-        elif seq_record.annotations["taxonomy"][6] == "Archosauria":  # classify as bird
-            if seq_record.annotations["taxonomy"][11] == "Aves":  # bird
-                assignment = "(B)"
+            elif seq_record.annotations["taxonomy"][6] == "Mammalia":
+                if seq_record.annotations["taxonomy"][9] == "Primates":
+                    assignment = "(P)"
+                else:
+                    assignment = "(M)"
+
             else:
+                assignment = "UNCLASSIFIED FIX ME\n"
                 counter = counter + 1
+#end of classification block~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-        elif seq_record.annotations["taxonomy"][6] == "Lepidosauria" or  seq_record.annotations["taxonomy"][6] == "Testudines + Archosauria group":
-            assignment = "(R)"
+            counterRecs = counterRecs + 1
 
-        elif seq_record.annotations["taxonomy"][6] == "Mammalia":
-            if seq_record.annotations["taxonomy"][9] == "Primates":
-                assignment = "(P)"
-            else:
-                assignment = "(M)"
 
-        else:
-            assignment = "UNCLASSIFIED FIX ME\n"
-            counter = counter + 1
+            sequence_title = (">" + seq_record.annotations["source"] + ", " + assignment + "\n")
+            file.write(sequence_title)
+            file.write(new_sequence + "\n")
 
-        sequence_title = (">" + seq_record.annotations["source"] + ", " + assignment + "\n")
-        file.write(sequence_title)
-        file.write(sequence)
-        counterRecs = counterRecs + 1
+            old_sequence_length = new_sequence_length
+            old_sequence_name = new_sequence_name
+            old_sequence = new_sequence
 
     print("Number of unclassified species:", counter)
+    print("Number of removed duplicates or skipped sequences with unknown aas:", duplicates)
     print("Number of records written to file: ", counterRecs)
     file.close()
 
