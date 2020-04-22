@@ -106,10 +106,10 @@ def Classify(ListRecords):
                 counter = counter + 1
 #end of classification block~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-            counterRecs = counterRecs + 1
+            counterRecs = counterRecs + 1  #counter of records that made it to file
 
 
-            sequence_title = (">" + seq_record.annotations["source"] + ", " + assignment + "\n")
+            sequence_title = (">" + str(counterRecs) + ". " + seq_record.annotations["source"] + ", " + assignment + "\n")
             file.write(sequence_title)
             file.write(new_sequence + "\n")
 
