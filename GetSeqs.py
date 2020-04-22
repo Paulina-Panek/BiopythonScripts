@@ -1,25 +1,23 @@
 # Paulina Panek
 # April 2020
-# Script parsing result xml file to get name of the sequence, classification, sequence, length
+# Script parsing result GenPept file (.gp) to get name of the sequence, classification, sequence, length
 
-import Bio
 from Bio import Entrez
 Entrez.email = "ppanek@hpu.edu"
 from Bio import SeqIO
-from io import StringIO
-from Bio import GenBank
 
 def numberRecords(ListRecords):
     #Function prints number of records
     records = list(SeqIO.parse(ListRecords, "genbank"))
     print("Found %i records in initial file " % len(records))
 
-def CheckIfDuplicate(first_sequence, second_sequence):
-## returns 0 (same sequences), 1 (not same sequences, or 3 (something went wrong, function didn't work
+def CheckIfDuplicate(first_sequence_name, second_sequence_name, first_sequence, second_sequence):
+    # returns 0 (same sequences), 1 (not same sequences, or 3 (something went wrong, function didn't work
+
     return_value = 3
 
     # if same species AND length of sequence is the same, check if the sequence is the same
-    if (first_sequence == second_sequence) and (first_sequence == second_sequence):
+    if (first_sequence_name == second_sequence_name):
         if first_sequence == second_sequence:
             return_value = 0  #same sequences
         else:
@@ -48,17 +46,15 @@ def Classify(ListRecords):
     counterRecs = 0
     duplicates = 0
     old_sequence_name = "empty"
-    old_sequence_length = 0
     old_sequence = "no sequence yet"
     new_sequence_name = "empty2"
-    new_sequence_length = 0
     sequence_title = "error! check what happened here"
 
     for seq_record in SeqIO.parse(ListRecords, "gb"):  #for every record in the list
 
         duplicates = duplicates + 1
 
-# setting up initial vatiables
+        # setting up initial vatiables
         new_sequence_name = str(seq_record.seq) + "\n"
         new_sequence_length = len(seq_record)
         new_sequence = str(seq_record.seq)
@@ -66,7 +62,7 @@ def Classify(ListRecords):
         assignment = "UNASSIGNED FIX ME"
         Number_of_X = unknown_aas(new_sequence)
 
-        if (CheckIfDuplicate(old_sequence, new_sequence) == 1) and (Number_of_X == 0):  # if not the same and no unknown aas (X), continue
+        if (CheckIfDuplicate(new_sequence_name, old_sequence_name, new_sequence, old_sequence) == 1) and (Number_of_X == 0):  # if not the same and no unknown aas (X), continue
 
             duplicates = duplicates - 1
 
@@ -100,14 +96,12 @@ def Classify(ListRecords):
                     assignment = "(P)"
                 else:
                     assignment = "(M)"
-
             else:
                 assignment = "UNCLASSIFIED FIX ME\n"
                 counter = counter + 1
 #end of classification block~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
             counterRecs = counterRecs + 1  #counter of records that made it to file
-
 
             sequence_title = (">" + str(counterRecs) + ". " + seq_record.annotations["source"] + ", " + assignment + "\n")
             file.write(sequence_title)
@@ -126,11 +120,9 @@ Classify("arc_sequences_04202020.gp")
 
 
 #for seq_record in SeqIO.parse("arc_sequences_04202020.gp","gb"): #uses GenPept file
-    #print(seq_record.description) #protein name [organism]
-    #print(seq_record.seq) # sequence
-    #print(seq_record.annotations["source"]) #name (common name)
-    #print(seq_record.annotations["taxonomy"][0])
-    #print(seq_record.annotations)
-    #print(len(seq_record)) #length of sequence
-
-
+#print(seq_record.description) #protein name [organism]
+#print(seq_record.seq) # sequence
+#print(seq_record.annotations["source"]) #name (common name)
+#print(seq_record.annotations["taxonomy"][0])
+#print(seq_record.annotations)
+#print(len(seq_record)) #length of sequence
