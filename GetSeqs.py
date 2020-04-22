@@ -8,30 +8,38 @@ Entrez.email = "ppanek@hpu.edu"
 from Bio import SeqIO
 from io import StringIO
 from Bio import GenBank
-from Bio.Seq import Seq
-from Bio.SeqRecord import SeqRecord
-from Bio.SeqUtils.CheckSum import seguid
-
 
 def numberRecords(ListRecords):
     #Function prints number of records
     records = list(SeqIO.parse(ListRecords, "genbank"))
-    print("Found %i records in initial file: " % len(records))
+    print("Found %i records in initial file " % len(records))
+
+def CheckIfDuplicate(first_sequence, second_sequece):
+    pass
 
 numberRecords("arc_sequences_04202020.gp")
 
 file = open("AllSpecies.fasta", "w")
 
 def Classify(ListRecords):
-    #assigns group, prints with sequence
+    #assigns group, write with sequence to a file, (in progress) remove duplicate sequences or unknown XXXX
 
     counter = 0
     counterRecs = 0
+    old_sequence_name = "empty"
+    old_sequence_length = 0
+    new_sequence_name = "empty2"
+    new_sequence_length = 0
+    sequence_title = "error! check what happened here"
 
     for seq_record in SeqIO.parse(ListRecords, "gb"):
 
-        sequence = str(seq_record.seq)
+        sequence = str(seq_record.seq) + "\n"
+        new_sequence_length = len(seq_record)
         assignment = "UNASSIGNED FIX ME"
+
+        if (new_sequence_name == old_sequence_name) and (new_sequence_length == old_sequence_length):
+            CheckIfDuplicate(old_sequence, new_sequence)
 
         if seq_record.annotations["taxonomy"][2] == "Ecdysozoa":  #classify as invertebrate
             assignment = "(I)"
@@ -61,16 +69,16 @@ def Classify(ListRecords):
         elif seq_record.annotations["taxonomy"][6] == "Mammalia":
             if seq_record.annotations["taxonomy"][9] == "Primates":
                 assignment = "(P)"
-
             else:
                 assignment = "(M)"
 
         else:
-            print(seq_record.annotations["source"] + ", UNCLASSIFIED FIX ME\n")
+            assignment = "UNCLASSIFIED FIX ME\n"
             counter = counter + 1
 
-        file.write(">" + seq_record.annotations["source"] + ", " + assignment + "\n")
-        file.write(sequence + "\n")
+        sequence_title = (">" + seq_record.annotations["source"] + ", " + assignment + "\n")
+        file.write(sequence_title)
+        file.write(sequence)
         counterRecs = counterRecs + 1
 
     print("Number of unclassified species:", counter)
