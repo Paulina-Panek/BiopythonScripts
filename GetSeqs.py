@@ -6,7 +6,7 @@ from Bio import Entrez
 Entrez.email = "ppanek@hpu.edu"
 from Bio import SeqIO
 from Bio import Align
-from Bio.SubsMat.MatrixInfo import blosum62
+from Bio.SubsMat.MatrixInfo import gonnet
 from PercentIdentity import *  #imports all functions from PercentIdentity.py
 
 def numberRecords(ListRecords):
@@ -27,7 +27,6 @@ def CheckIfDuplicate(first_sequence_name, second_sequence_name, first_sequence, 
             return_value = 1
     else:
         return_value = 1
-
     return(return_value)
 
 def RemoveLike(protein_name):
@@ -121,10 +120,13 @@ def Classify(ListRecords):
 # Begin pairwise alignment with human
             aligner.open_gap_score = -10
             aligner.extend_gap_score = -0.2
-            aligner.substitution_matrix = blosum62
+            aligner.substitution_matrix = gonnet
             alignments = aligner.align(human_sequence, new_sequence)
+            Alignment_w_human = align_sequences(new_sequence, human_sequence, new_sequence_length)  #second sequence should be human to mimick the "hit" setting of mview
+            pidh = round(Alignment_w_human[1], 1)
 
-            sequence_title = (">" + str(counterRecs) + ". " + seq_record.annotations["source"] + ", " + assignment + "\n")
+
+            sequence_title = (">" + str(counterRecs) + ". " + seq_record.annotations["source"] + ", " + assignment + ", "  + str(pidh) + "%\n")
             file.write(sequence_title)
             file.write(new_sequence + "\n")
 
@@ -132,13 +134,12 @@ def Classify(ListRecords):
             old_sequence_length = new_sequence_length
             old_sequence_name = new_sequence_name
             old_sequence = new_sequence
-            prot_name = seq_record.description
-            print(prot_name)
+
+
 
     print("Number of unclassified species:", counter)
-    print("Number of removed duplicates or skipped sequences with unknown aas:", duplicates)
+    print("Number of removed duplicates or skipped sequences with unknown aas or skipped because -like protein:", duplicates)
     print("Number of records written to file: ", counterRecs)
-    print(alignments[0], alignments[1])
 
     file.close()
 
