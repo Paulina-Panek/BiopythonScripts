@@ -5,6 +5,9 @@
 from Bio import Entrez
 Entrez.email = "ppanek@hpu.edu"
 from Bio import SeqIO
+from Bio import Align
+from Bio.SubsMat.MatrixInfo import blosum62
+from PercentIdentity import *  #imports all functions from PercentIdentity.py
 
 def numberRecords(ListRecords):
     #Function prints number of records
@@ -27,6 +30,14 @@ def CheckIfDuplicate(first_sequence_name, second_sequence_name, first_sequence, 
 
     return(return_value)
 
+def RemoveLike(protein_name):
+#if protein has word like in it's name, returns 1
+    ret_val = 0
+
+    if "like" in protein_name:
+        ret_val = 1
+    return ret_val
+
 def unknown_aas(sequence):
     #returns number of unknown amino acids in sequence
     X_in_sequence = 0
@@ -38,6 +49,10 @@ def unknown_aas(sequence):
 numberRecords("arc_sequences_04202020.gp")
 
 file = open("AllSpecies.fasta", "w")
+
+aligner = Align.PairwiseAligner()
+
+human_sequence = "MELDHRTSGGLHAYPGPRGGQVAKPNVILQIGKCRAEMLEHVRRTHRHLLAEVSKQVERELKGLHRSVGKLESNLDGYVPTSDSQRWKKSIKACLCRCQETIANLERWVKREMHVWREVFYRLERWADRLESTGGKYPVGSESARHTVSVGVGGPESYCHEADGYDYTVSPYAITPPPAAGELPGQEPAEAQQYQPWVPGEDGQPSPGVDTQIFEDPREFLSHLEEYLRQVGGSEEYWLSQIQNHMNGPAKKWWEFKQGSVKNWVEFKKEFLQYSEGTLSREAIQRELDLPQKQGEPLDQFLWRKRDLYQTLYVDADEEEIIQYVVGTLQPKLKRFLRHPLPKTLEQLIQRGMEVQDDLEQAAEPAGPHLPVEDEAETLTPAPNSESVASDRTQPE"
 
 def Classify(ListRecords):
     #assigns group, write with sequence to a file, (in progress) remove duplicate sequences or unknown XXXX
@@ -58,11 +73,11 @@ def Classify(ListRecords):
         new_sequence_name = str(seq_record.seq) + "\n"
         new_sequence_length = len(seq_record)
         new_sequence = str(seq_record.seq)
-
         assignment = "UNASSIGNED FIX ME"
         Number_of_X = unknown_aas(new_sequence)
+        prot_name = seq_record.description
 
-        if (CheckIfDuplicate(new_sequence_name, old_sequence_name, new_sequence, old_sequence) == 1) and (Number_of_X == 0):  # if not the same and no unknown aas (X), continue
+        if (CheckIfDuplicate(new_sequence_name, old_sequence_name, new_sequence, old_sequence) == 1) and (Number_of_X == 0) and RemoveLike(prot_name) == 0:  # if not the same and no unknown aas (X) and no "like" in protein name, continue
 
             duplicates = duplicates - 1
 
@@ -103,17 +118,28 @@ def Classify(ListRecords):
 
             counterRecs = counterRecs + 1  #counter of records that made it to file
 
+# Begin pairwise alignment with human
+            aligner.open_gap_score = -10
+            aligner.extend_gap_score = -0.2
+            aligner.substitution_matrix = blosum62
+            alignments = aligner.align(human_sequence, new_sequence)
+
             sequence_title = (">" + str(counterRecs) + ". " + seq_record.annotations["source"] + ", " + assignment + "\n")
             file.write(sequence_title)
             file.write(new_sequence + "\n")
 
+
             old_sequence_length = new_sequence_length
             old_sequence_name = new_sequence_name
             old_sequence = new_sequence
+            prot_name = seq_record.description
+            print(prot_name)
 
     print("Number of unclassified species:", counter)
     print("Number of removed duplicates or skipped sequences with unknown aas:", duplicates)
     print("Number of records written to file: ", counterRecs)
+    print(alignments[0], alignments[1])
+
     file.close()
 
 Classify("arc_sequences_04202020.gp")
