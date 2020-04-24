@@ -1,0 +1,237 @@
+LABELS
+SEPARATOR TAB
+DATA
+1.	Drosophila ananassae, (I), 9.3%
+2.	Drosophila ananassae, (I), 8.3%
+3.	Drosophila erecta, (I), 8.3%
+4.	Drosophila erecta, (I), 10.6%
+5.	Drosophila grimshawi, (I), 9.7%
+6.	Drosophila hydei, (I), 8.8%
+7.	Scaptodrosophila lebanonensis, (I), 9.7%
+8.	Scaptodrosophila lebanonensis, (I), 7.2%
+9.	Drosophila mauritiana, (I), 12.6%
+10.	Drosophila mauritiana, (I), 7.3%
+11.	Drosophila melanogaster (fruit fly), (I), 12.6%
+12.	Drosophila miranda, (I), 11.2%
+13.	Drosophila miranda, (I), 7.7%
+14.	Drosophila mojavensis, (I), 12.1%
+15.	Drosophila mojavensis, (I), 4.1%
+16.	Drosophila mojavensis, (I), 10.8%
+17.	Drosophila navojoa, (I), 8.4%
+18.	Drosophila persimilis, (I), 10.0%
+19.	Drosophila persimilis, (I), 7.7%
+20.	Drosophila pseudoobscura, (I), 7.7%
+21.	Drosophila pseudoobscura, (I), 10.0%
+22.	Drosophila sechellia, (I), 12.6%
+23.	Drosophila sechellia, (I), 7.3%
+24.	Drosophila virilis, (I), 11.6%
+25.	Drosophila virilis, (I), 8.7%
+26.	Drosophila virilis, (I), 12.9%
+27.	Drosophila serrata, (I), 8.3%
+28.	Apis mellifera (honey bee), (I), 13.0%
+29.	Ctenocephalides felis (cat flea), (I), 6.0%
+30.	Clupea harengus (Atlantic herring), (F), 12.9%
+31.	Oncorhynchus kisutch (coho salmon), (F), 21.5%
+32.	Oncorhynchus mykiss (rainbow trout), (F), 6.7%
+33.	Xenopus tropicalis (tropical clawed frog), (A), 42.6%
+34.	Chelonia mydas (Green sea turtle), (R), 69.9%
+35.	Chrysemys picta bellii (western painted turtle), (R), 70.4%
+36.	Alligator mississippiensis (American alligator), (R), 70.5%
+37.	Notechis scutatus (mainland tiger snake), (R), 66.0%
+38.	Pseudonaja textilis, (R), 66.7%
+39.	Dromaius novaehollandiae (emu), (B), 71.3%
+40.	Anas platyrhynchos (mallard), (B), 71.0%
+41.	Columba livia (rock pigeon), (B), 72.0%
+42.	Numida meleagris (helmeted guineafowl), (B), 70.9%
+43.	Gallus gallus (chicken), (B), 70.8%
+44.	Phasianus colchicus (Ring-necked pheasant), (B), 70.8%
+45.	Meleagris gallopavo (turkey), (B), 70.8%
+46.	Serinus canaria (Common canary), (B), 71.5%
+47.	Calypte anna (Anna's hummingbird), (B), 71.5%
+48.	Ornithorhynchus anatinus (platypus), (M), 76.3%
+49.	Sarcophilus harrisii (Tasmanian devil), (M), 82.0%
+50.	Dasypus novemcinctus (nine-banded armadillo), (M), 79.7%
+51.	Echinops telfairi (small Madagascar hedgehog), (M), 79.6%
+52.	Pteropus alecto (black flying fox), (M), 92.2%
+53.	Desmodus rotundus (common vampire bat), (M), 91.0%
+54.	Callithrix jacchus (white-tufted-ear marmoset), (P), 96.2%
+55.	Sapajus apella (Tufted capuchin), (P), 96.5%
+56.	Macaca mulatta (Rhesus monkey), (P), 97.5%
+57.	Macaca nemestrina (pig-tailed macaque), (P), 82.6%
+58.	Papio anubis (olive baboon), (P), 98.2%
+59.	Gorilla gorilla gorilla (western lowland gorilla), (P), 99.7%
+60.	Pan paniscus (pygmy chimpanzee), (P), 99.5%
+61.	Pongo abelii (Sumatran orangutan), (P), 99.5%
+62.	Homo sapiens (human), (P), 100.0%
+63.	Vulpes vulpes (red fox), (M), 94.7%
+64.	Felis catus (domestic cat), (M), 94.2%
+65.	Zalophus californianus (California sea lion), (M), 76.1%
+66.	Leptonychotes weddellii (Weddell seal), (M), 92.2%
+67.	Phoca vitulina (harbor seal), (M), 92.5%
+68.	Globicephala melas (long-finned pilot whale), (M), 90.9%
+69.	Orcinus orca (killer whale), (M), 91.4%
+70.	Delphinapterus leucas (beluga whale), (M), 91.2%
+71.	Physeter catodon (sperm whale), (M), 90.9%
+72.	Loxodonta africana (African savanna elephant), (M), 89.6%
+73.	Equus caballus (horse), (M), 92.5%
+74.	Sus scrofa (pig), (M), 92.4%
+75.	Camelus dromedarius (Arabian camel), (M), 91.4%
+76.	Odocoileus virginianus texanus, (M), 90.3%
+77.	Bos taurus (cattle), (M), 91.7%
+78.	Capra hircus (goat), (M), 91.7%
+79.	Ovis aries (sheep), (M), 91.4%
+80.	Urocitellus parryii (Arctic ground squirrel), (M), 93.7%
+81.	Cricetulus griseus (Chinese hamster), (M), 18.5%
+82.	Cricetulus griseus (Chinese hamster), (M), 92.7%
+83.	Cricetulus griseus (Chinese hamster), (M), 68.9%
+84.	Mesocricetus auratus (golden hamster), (M), 92.2%
+85.	Peromyscus leucopus (white-footed mouse), (M), 92.9%
+86.	Meriones unguiculatus (Mongolian gerbil), (M), 92.7%
+87.	Mus caroli (Ryukyu mouse), (M), 92.9%
+88.	Rattus norvegicus (Norway rat), (M), 92.4%
+89.	Rattus rattus (black rat), (M), 92.7%
+90.	Cavia porcellus (domestic guinea pig), (M), 95.2%
+91.	Octodon degus (degu), (M), 94.2%
+92.	Heterocephalus glaber (naked mole-rat), (M), 58.7%
+93.	Heterocephalus glaber (naked mole-rat), (M), 95.7%
+94.	Amazona aestiva (blue-fronted amazon), (B), 71.3%
+95.	Melopsittacus undulatus (budgerigar), (B), 71.0%
+96.	Pelodiscus sinensis (Chinese soft-shelled turtle), (R), 69.4%
+97.	Bactrocera dorsalis (oriental fruit fly), (I), 7.2%
+98.	Bactrocera dorsalis (oriental fruit fly), (I), 10.8%
+99.	Bactrocera dorsalis (oriental fruit fly), (I), 7.8%
+100.	Zeugodacus cucurbitae (melon fly), (I), 10.6%
+101.	Zeugodacus cucurbitae (melon fly), (I), 11.6%
+102.	Zeugodacus cucurbitae (melon fly), (I), 7.8%
+103.	Zeugodacus cucurbitae (melon fly), (I), 10.6%
+104.	Zeugodacus cucurbitae (melon fly), (I), 11.6%
+105.	Neomonachus schauinslandi (Hawaiian monk seal), (M), 92.0%
+106.	Vombatus ursinus (common wombat), (M), 81.0%
+107.	Drosophila busckii, (I), 8.8%
+108.	Drosophila busckii, (I), 8.3%
+109.	Lygus hesperus (lygus bug), (I), 16.8%
+110.	Lygus hesperus (lygus bug), (I), 15.9%
+111.	Lygus hesperus (lygus bug), (I), 15.9%
+112.	Nothoprocta perdicaria, (B), 71.5%
+113.	Bos frontalis (gayal), (M), 91.7%
+114.	Bos grunniens (domestic yak), (M), 91.9%
+115.	Bos indicus x Bos taurus (hybrid cattle), (M), 91.7%
+116.	Vicugna pacos (alpaca), (M), 91.4%
+117.	Microcebus murinus (gray mouse lemur), (P), 94.9%
+118.	Otolemur garnettii (small-eared galago), (P), 93.4%
+119.	Trachemys scripta elegans, (R), 70.4%
+120.	Acinonyx jubatus (cheetah), (M), 94.2%
+121.	Callorhinus ursinus (northern fur seal), (M), 92.7%
+122.	Thamnophis elegans (Western terrestrial garter snake), (R), 64.8%
+123.	Mastomys coucha (southern multimammate mouse), (M), 93.2%
+124.	Mustela erminea (ermine), (M), 91.7%
+125.	Suricata suricatta (meerkat), (M), 93.9%
+126.	Aotus nancymaae (Ma's night monkey), (P), 96.2%
+127.	Phascolarctos cinereus (koala), (M), 81.8%
+128.	Alligator sinensis (Chinese alligator), (R), 70.8%
+129.	Monodon monoceros (narwhal), (M), 91.2%
+130.	Phocoena sinus (vaquita), (M), 91.2%
+131.	Ictidomys tridecemlineatus (thirteen-lined ground squirrel), (M), 92.8%
+132.	Zonotrichia albicollis (white-throated sparrow), (B), 71.3%
+133.	Drosophila novamexicana, (I), 8.7%
+134.	Geospiza fortis (medium ground-finch), (B), 71.5%
+135.	Castor canadensis (American beaver), (M), 94.2%
+136.	Trachypithecus francoisi (Francois's langur), (P), 98.0%
+137.	Rhinolophus ferrumequinum (greater horseshoe bat), (M), 89.0%
+138.	Taeniopygia guttata (zebra finch), (B), 71.3%
+139.	Lynx canadensis (Canada lynx), (M), 94.2%
+140.	Rhinopithecus roxellana (golden snub-nosed monkey), (P), 98.0%
+141.	Nomascus leucogenys (northern white-cheeked gibbon), (P), 98.7%
+142.	Podarcis muralis (Common wall lizard), (R), 69.2%
+143.	Fopius arisanus, (I), 10.2%
+144.	Lontra canadensis (Northern American river otter), (M), 92.2%
+145.	Microtus ochrogaster (prairie vole), (M), 92.7%
+146.	Lacerta agilis, (R), 69.3%
+147.	Acanthochromis polyacanthus (spiny chromis), (F), 18.5%
+148.	Hylobates moloch (silvery gibbon), (P), 98.7%
+149.	Labeo rohita (rohu), (F), 10.7%
+150.	Labeo rohita (rohu), (F), 13.6%
+151.	Labeo rohita (rohu), (F), 7.2%
+152.	Camarhynchus parvulus, (B), 71.5%
+153.	Bubalus bubalis (water buffalo), (M), 91.9%
+154.	Lagenorhynchus obliquidens (Pacific white-sided dolphin), (M), 91.2%
+155.	Catharus ustulatus (Swainson's thrush), (B), 71.5%
+156.	Marmota flaviventris (yellow-bellied marmot), (M), 94.4%
+157.	Coturnix japonica (Japanese quail), (B), 70.9%
+158.	Pogona vitticeps (central bearded dragon), (R), 68.9%
+159.	Protobothrops mucrosquamatus, (R), 65.5%
+160.	Camponotus floridanus (Florida carpenter ant), (I), 4.8%
+161.	Chelonoidis abingdonii (Abingdon island giant tortoise), (R), 71.1%
+162.	Myotis brandtii (Brandt's bat), (M), 63.6%
+163.	Neopelma chrysocephalum (saffron-crested tyrant-manakin), (B), 70.6%
+164.	Ursus arctos horribilis, (M), 93.2%
+165.	Trichechus manatus latirostris (Florida manatee), (M), 89.4%
+166.	Pteropus vampyrus (large flying fox), (M), 92.2%
+167.	Pogonomyrmex barbatus (red harvester ant), (I), 2.7%
+168.	Eumeta japonica, (I), 14.4%
+169.	Eumeta japonica, (I), 20.4%
+170.	Eumeta japonica, (I), 13.7%
+171.	Eumeta japonica, (I), 15.3%
+172.	Eumeta japonica, (I), 18.6%
+173.	Eumeta japonica, (I), 1.6%
+174.	Eumeta japonica, (I), 14.2%
+175.	Eumeta japonica, (I), 10.7%
+176.	Eumeta japonica, (I), 13.8%
+177.	Eumeta japonica, (I), 3.4%
+178.	Eumeta japonica, (I), 13.8%
+179.	Eumeta japonica, (I), 16.4%
+180.	Eumeta japonica, (I), 12.5%
+181.	Eumeta japonica, (I), 15.1%
+182.	Eumeta japonica, (I), 14.2%
+183.	Eumeta japonica, (I), 14.9%
+184.	Eumeta japonica, (I), 12.4%
+185.	Eumeta japonica, (I), 20.4%
+186.	Cyanistes caeruleus (blue tit), (B), 71.5%
+187.	Folsomia candida, (I), 17.5%
+188.	Folsomia candida, (I), 16.6%
+189.	Folsomia candida, (I), 16.9%
+190.	Folsomia candida, (I), 15.6%
+191.	Folsomia candida, (I), 14.6%
+192.	Folsomia candida, (I), 17.8%
+193.	Folsomia candida, (I), 16.9%
+194.	Folsomia candida, (I), 16.0%
+195.	Empidonax traillii (willow flycatcher), (B), 71.0%
+196.	Python bivittatus (Burmese python), (R), 68.4%
+197.	Athene cunicularia (burrowing owl), (B), 71.0%
+198.	Rhinatrema bivittatum (two-lined caecilian), (A), 43.1%
+199.	Aythya fuligula (tufted duck), (B), 71.0%
+200.	Aquila chrysaetos chrysaetos, (B), 70.5%
+201.	Tupaia chinensis (Chinese tree shrew), (M), 53.3%
+202.	Antrostomus carolinensis (chuck-will's-widow), (B), 70.8%
+203.	Canis lupus dingo (dingo), (M), 94.2%
+204.	Chiroxiphia lanceolata (lance-tailed manakin), (B), 70.6%
+205.	Lonchura striata domestica (Bengalese finch), (B), 71.5%
+206.	Aphis craccivora (cowpea aphid), (I), 18.6%
+207.	Aphis craccivora (cowpea aphid), (I), 13.4%
+208.	Aphis craccivora (cowpea aphid), (I), 8.6%
+209.	Aphis craccivora (cowpea aphid), (I), 5.4%
+210.	Aphis craccivora (cowpea aphid), (I), 16.9%
+211.	Apteryx rowi (Okarito brown kiwi), (B), 71.5%
+212.	Balaenoptera acutorostrata scammoni, (M), 91.2%
+213.	Manacus vitellinus (golden-collared manakin), (B), 70.6%
+214.	Falco cherrug (Saker falcon), (B), 69.6%
+215.	Patagioenas fasciata monilis, (B), 71.3%
+216.	Enhydra lutris kenyoni, (M), 92.2%
+217.	Corapipo altera (White-ruffed manakin), (B), 70.6%
+218.	Camelus ferus (Wild Bactrian camel), (M), 91.4%
+219.	Grammomys surdaster, (M), 92.9%
+220.	Tyto alba alba, (B), 70.8%
+221.	Piliocolobus tephrosceles (Ugandan red Colobus), (P), 98.0%
+222.	Pipra filicauda (Wire-tailed manakin), (B), 70.6%
+223.	Fukomys damarensis (Damara mole-rat), (M), 20.2%
+224.	Corvus cornix cornix, (B), 71.5%
+225.	Nannospalax galili (Upper Galilee mountains blind mole rat), (M), 93.2%
+226.	Corvus moneduloides (New Caledonian crow), (B), 71.5%
+227.	Tachysurus fulvidraco (yellow catfish), (F), 10.2%
+228.	Microcaecilia unicolor, (A), 40.8%
+229.	Neophocaena asiaeorientalis asiaeorientalis (Yangtze finless porpoise), (M), 91.2%
+230.	Limosa lapponica baueri, (B), 70.9%
+231.	Gopherus evgoodei (Goodes thornscrub tortoise), (R), 70.1%
+232.	Carlito syrichta (Philippine tarsier), (P), 94.2%
+233.	Strigops habroptila (Kakapo), (B), 71.5%
+234.	Terrapene carolina triunguis (Three-toed box turtle), (R), 70.1%

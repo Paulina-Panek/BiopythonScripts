@@ -48,7 +48,11 @@ def unknown_aas(sequence):
 numberRecords("arc_sequences_04202020.gp")
 
 file = open("AllSpecies.fasta", "w")
+file2 = open("TreeLabels.txt", "w")
+file3 = open("TreeColors.txt", "w")
 
+file2.write("LABELS\nSEPARATOR TAB\nDATA\n")  #writes a header for label file for Itol
+file3.write("TREE_COLORS\nSEPARATOR TAB\nDATA\n")
 aligner = Align.PairwiseAligner()
 
 human_sequence = "MELDHRTSGGLHAYPGPRGGQVAKPNVILQIGKCRAEMLEHVRRTHRHLLAEVSKQVERELKGLHRSVGKLESNLDGYVPTSDSQRWKKSIKACLCRCQETIANLERWVKREMHVWREVFYRLERWADRLESTGGKYPVGSESARHTVSVGVGGPESYCHEADGYDYTVSPYAITPPPAAGELPGQEPAEAQQYQPWVPGEDGQPSPGVDTQIFEDPREFLSHLEEYLRQVGGSEEYWLSQIQNHMNGPAKKWWEFKQGSVKNWVEFKKEFLQYSEGTLSREAIQRELDLPQKQGEPLDQFLWRKRDLYQTLYVDADEEEIIQYVVGTLQPKLKRFLRHPLPKTLEQLIQRGMEVQDDLEQAAEPAGPHLPVEDEAETLTPAPNSESVASDRTQPE"
@@ -125,11 +129,25 @@ def Classify(ListRecords):
             Alignment_w_human = align_sequences(new_sequence, human_sequence, new_sequence_length)  #second sequence should be human to mimick the "hit" setting of mview
             pidh = round(Alignment_w_human[1], 1)
 
-
             sequence_title = (">" + str(counterRecs) + ". " + seq_record.annotations["source"] + ", " + assignment + ", "  + str(pidh) + "%\n")
+            title_no_seq = (str(counterRecs) + ".\t" + seq_record.annotations["source"] + ", " + assignment + ", "  + str(pidh) + "%\n")
+            file2.write(title_no_seq)
             file.write(sequence_title)
             file.write(new_sequence + "\n")
-
+            if assignment == "(B)":
+                file3.write(str(counterRecs) + ".\tlabel_background\trgba(170,51,119,0.5)\n")
+            if assignment == "(M)":
+                file3.write(str(counterRecs) + ".\tlabel_background\trgba(68,119,170,0.5)\n")
+            if assignment == "(P)":
+                file3.write(str(counterRecs) + ".\tlabel_background\trgba(102,204,238,0.5)\n")
+            if assignment == "(I)":
+                file3.write(str(counterRecs) + ".\tlabel_background\trgba(187,187,187,0.5)\n")
+            if assignment == "(R)":
+                file3.write(str(counterRecs) + ".\tlabel_background\trgba(34,136,51,0.5)\n")
+            if assignment == "(A)":
+                file3.write(str(counterRecs) + ".\tlabel_background\trgba(204,187,68,0.5)\n")
+            if assignment == "(F)":
+                file3.write(str(counterRecs) + ".\tlabel_background\trgba(238,102,119,0.5)\n")
 
             old_sequence_length = new_sequence_length
             old_sequence_name = new_sequence_name
@@ -142,6 +160,8 @@ def Classify(ListRecords):
     print("Number of records written to file: ", counterRecs)
 
     file.close()
+    file2.close()
+    file3.close()
 
 Classify("arc_sequences_04202020.gp")
 
