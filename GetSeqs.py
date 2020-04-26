@@ -45,11 +45,14 @@ def unknown_aas(sequence):
         X_in_sequence = X_in_sequence + 1
     return X_in_sequence
 
+
 numberRecords("arc_sequences_04202020.gp")
 
 file = open("AllSpecies.fasta", "w")
 file2 = open("TreeLabels.txt", "w")
 file3 = open("TreeColors.txt", "w")
+file4 = open("RepeatedReport.txt","w")
+file5 = open("allResults_classified.csv", "w")
 
 file2.write("LABELS\nSEPARATOR TAB\nDATA\n")  #writes a header for label file for Itol
 file3.write("TREE_COLORS\nSEPARATOR TAB\nDATA\n")
@@ -149,6 +152,9 @@ def Classify(ListRecords):
             if assignment == "(F)":
                 file3.write(str(counterRecs) + ".\tlabel_background\trgba(238,102,119,0.5)\n")
 
+            file4.write(str(counterRecs) + ".\t" + seq_record.annotations["source"] + "\t\t" + str(new_sequence_length) + "\t" + seq_record.annotations["date"] + "\t" + "\n\n")
+            file5.write(str(counterRecs) + "," + seq_record.description + seq_record.annotations["source"] + assignment + str(new_sequence_length))
+
             old_sequence_length = new_sequence_length
             old_sequence_name = new_sequence_name
             old_sequence = new_sequence
@@ -162,6 +168,8 @@ def Classify(ListRecords):
     file.close()
     file2.close()
     file3.close()
+    file4.close()
+    file5.close()
 
 Classify("arc_sequences_04202020.gp")
 
