@@ -1,0 +1,189 @@
+TREE_COLORS
+SEPARATOR COMMA
+DATA
+
+1,Tupaia chinensis,label_background,#FF7F00
+2,Trichechus manatus latirostris,label_background,#FF7F00
+3,Phascolarctos cinereus,label_background,#FF7F00
+4,Vombatus ursinus,label_background,#FF7F00
+5,Nannospalax galili,label_background,#FF7F00
+6,Castor canadensis,label_background,#FF7F00
+7,Fukomys damarensis,label_background,#FF7F00
+8,Heterocephalus glaber,label_background,#FF7F00
+9,Octodon degus,label_background,#FF7F00
+10,Cavia porcellus,label_background,#FF7F00
+11,Grammomys surdaster,label_background,#FF7F00
+12,Mastomys coucha,label_background,#FF7F00
+13,Rattus rattus,label_background,#FF7F00
+14,Rattus norvegicus,label_background,#FF7F00
+15,Mus pahari,label_background,#FF7F00
+16,Mus caroli,label_background,#FF7F00
+17,Meriones unguiculatus,label_background,#FF7F00
+18,Microtus ochrogaster,label_background,#FF7F00
+19,Peromyscus leucopus,label_background,#FF7F00
+20,Mesocricetus auratus,label_background,#FF7F00
+21,Cricetulus griseus,label_background,#FF7F00
+22,Marmota flaviventris,label_background,#FF7F00
+23,Ictidomys tridecemlineatus,label_background,#FF7F00
+24,Urocitellus parryii,label_background,#FF7F00
+25,Equus caballus,label_background,#FF7F00
+26,Loxodonta africana,label_background,#FF7F00
+27,Balaenoptera acutorostrata scammoni,label_background,#FF7F00
+28,Neophocaena asiaeorientalis asiaeorientalis,label_background,#FF7F00
+29,Phocoena sinus,label_background,#FF7F00
+30,Bubalus bubalis,label_background,#FF7F00
+31,Ovis aries,label_background,#FF7F00
+32,Capra hircus,label_background,#FF7F00
+33,Bos indicus x Bos taurus,label_background,#FF7F00
+34,Bos grunniens,label_background,#FF7F00
+35,Bos frontalis,label_background,#FF7F00
+36,Bos taurus,label_background,#FF7F00
+37,Odocoileus virginianus texanus,label_background,#FF7F00
+38,Vicugna pacos,label_background,#FF7F00
+39,Camelus ferus,label_background,#FF7F00
+40,Camelus dromedarius,label_background,#FF7F00
+41,Sus scrofa,label_background,#FF7F00
+42,Physeter catodon,label_background,#FF7F00
+43,Monodon monoceros,label_background,#FF7F00
+44,Delphinapterus leucas,label_background,#FF7F00
+45,Lagenorhynchus obliquidens,label_background,#FF7F00
+46,Orcinus orca,label_background,#FF7F00
+47,Globicephala melas,label_background,#FF7F00
+48,Ursus arctos horribilis,label_background,#FF7F00
+49,Suricata suricatta,label_background,#FF7F00
+50,Enhydra lutris kenyoni,label_background,#FF7F00
+51,Lontra canadensis,label_background,#FF7F00
+52,Mustela erminea,label_background,#FF7F00
+53,Neomonachus schauinslandi,label_background,#FF7F00
+54,Phoca vitulina,label_background,#FF7F00
+55,Leptonychotes weddellii,label_background,#FF7F00
+56,Eumetopias jubatus,label_background,#FF7F00
+57,Callorhinus ursinus,label_background,#FF7F00
+58,Zalophus californianus,label_background,#FF7F00
+59,Lynx canadensis,label_background,#FF7F00
+60,Acinonyx jubatus,label_background,#FF7F00
+61,Felis catus,label_background,#FF7F00
+62,Canis lupus dingo,label_background,#FF7F00
+63,Vulpes vulpes,label_background,#FF7F00
+64,Carlito syrichta,label_background,#ff0000
+65,Hylobates moloch,label_background,#ff0000
+66,Nomascus leucogenys,label_background,#ff0000
+67,Aotus nancymaae,label_background,#ff0000
+68,Otolemur garnettii,label_background,#ff0000
+69,Microcebus murinus,label_background,#ff0000
+70,Homo sapiens,label_background,#ff0000
+71,Pongo abelii,label_background,#ff0000
+72,Pan troglodytes,label_background,#ff0000
+73,Pan paniscus,label_background,#ff0000
+74,Gorilla gorilla gorilla,label_background,#ff0000
+75,Piliocolobus tephrosceles,label_background,#ff0000
+76,Rhinopithecus roxellana,label_background,#ff0000
+77,Trachypithecus francoisi,label_background,#ff0000
+78,Theropithecus gelada,label_background,#ff0000
+79,Papio anubis,label_background,#ff0000
+80,Macaca nemestrina,label_background,#ff0000
+81,Macaca mulatta,label_background,#ff0000
+82,Sapajus apella,label_background,#ff0000
+83,Callithrix jacchus,label_background,#ff0000
+84,Myotis brandtii,label_background,#FF7F00
+85,Rhinolophus ferrumequinum,label_background,#FF7F00
+86,Desmodus rotundus,label_background,#FF7F00
+87,Pteropus vampyrus,label_background,#FF7F00
+88,Pteropus alecto,label_background,#FF7F00
+89,Echinops telfairi,label_background,#FF7F00
+90,Dasypus novemcinctus,label_background,#FF7F00
+91,Sarcophilus harrisii,label_background,#FF7F00
+92,Ornithorhynchus anatinus,label_background,#FF7F00
+93,Limosa lapponica baueri,label_background,#00ff00
+94,Falco cherrug,label_background,#00ff00
+95,Apteryx rowi,label_background,#00ff00
+96,Antrostomus carolinensis,label_background,#00ff00
+97,Aquila chrysaetos chrysaetos,label_background,#00ff00
+98,Tyto alba alba,label_background,#00ff00
+99,Athene cunicularia,label_background,#00ff00
+100,Nothoprocta perdicaria,label_background,#00ff00
+101,Melopsittacus undulatus,label_background,#00ff00
+102,Strigops habroptila,label_background,#00ff00
+103,Amazona aestiva,label_background,#00ff00
+104,Calypte anna,label_background,#00ff00
+105,Corvus moneduloides,label_background,#00ff00
+106,Corvus cornix cornix,label_background,#00ff00
+107,Empidonax traillii,label_background,#00ff00
+108,Cyanistes caeruleus,label_background,#00ff00
+109,Pipra filicauda,label_background,#00ff00
+110,Corapipo altera,label_background,#00ff00
+111,Manacus vitellinus,label_background,#00ff00
+112,Chiroxiphia lanceolata,label_background,#00ff00
+113,Neopelma chrysocephalum,label_background,#00ff00
+114,Catharus ustulatus,label_background,#00ff00
+115,Lonchura striata domestica,label_background,#00ff00
+116,Taeniopygia guttata,label_background,#00ff00
+117,Camarhynchus parvulus,label_background,#00ff00
+118,Geospiza fortis,label_background,#00ff00
+119,Zonotrichia albicollis,label_background,#00ff00
+120,Serinus canaria,label_background,#00ff00
+121,Coturnix japonica,label_background,#00ff00
+122,Meleagris gallopavo,label_background,#00ff00
+123,Phasianus colchicus,label_background,#00ff00
+124,Gallus gallus,label_background,#00ff00
+125,Numida meleagris,label_background,#00ff00
+126,Patagioenas fasciata monilis,label_background,#00ff00
+127,Columba livia,label_background,#00ff00
+128,Aythya fuligula,label_background,#00ff00
+129,Anas platyrhynchos,label_background,#00ff00
+130,Dromaius novaehollandiae,label_background,#00ff00
+131,Python bivittatus,label_background,rgba(255, 255, 0, 0.5)
+132,Protobothrops mucrosquamatus,label_background,rgba(255, 255, 0, 0.5)
+133,Pogona vitticeps,label_background,rgba(255, 255, 0, 0.5)
+134,Lacerta agilis,label_background,rgba(255, 255, 0, 0.5)
+135,Podarcis muralis,label_background,rgba(255, 255, 0, 0.5)
+136,Thamnophis elegans,label_background,rgba(255, 255, 0, 0.5)
+137,Pseudonaja textilis,label_background,rgba(255, 255, 0, 0.5)
+138,Notechis scutatus,label_background,rgba(255, 255, 0, 0.5)
+139,Alligator sinensis,label_background,rgba(255, 255, 0, 0.5)
+140,Alligator mississippiensis,label_background,rgba(255, 255, 0, 0.5)
+141,Gopherus evgoodei,label_background,rgba(255, 255, 0, 0.5)
+142,Chelonoidis abingdonii,label_background,rgba(255, 255, 0, 0.5)
+143,Pelodiscus sinensis,label_background,rgba(255, 255, 0, 0.5)
+144,Terrapene carolina triunguis,label_background,rgba(255, 255, 0, 0.5)
+145,Trachemys scripta elegans,label_background,rgba(255, 255, 0, 0.5)
+146,Chrysemys picta bellii,label_background,rgba(255, 255, 0, 0.5)
+147,Chelonia mydas,label_background,rgba(255, 255, 0, 0.5)
+148,Microcaecilia unicolor,label_background,rgba(0, 0, 255, 0.5)
+149,Rhinatrema bivittatum,label_background,rgba(0, 0, 255, 0.5)
+150,Xenopus tropicalis,label_background,rgba(0, 0, 255, 0.5)
+151,Tachysurus fulvidraco,label_background,#9400d3
+152,Labeo rohita,label_background,#9400d3
+153,Acanthochromis polyacanthus,label_background,#9400d3
+154,Oncorhynchus mykiss,label_background,#9400d3
+155,Oncorhynchus kisutch,label_background,#9400d3
+156,Clupea harengus,label_background,#9400d3
+157,Folsomia candida,label_background,#4b0082
+158,Eumeta japonica,label_background,#4b0082
+159,Aphis craccivora,label_background,#4b0082
+160,Lygus hesperus,label_background,#4b0082
+161,Ctenocephalides felis,label_background,#4b0082
+162,Pogonomyrmex barbatus,label_background,#4b0082
+163,Camponotus floridanus,label_background,#4b0082
+164,Fopius arisanus,label_background,#4b0082
+165,Apis mellifera,label_background,#4b0082
+166,Zeugodacus cucurbitae,label_background,#4b0082
+167,Bactrocera dorsalis,label_background,#4b0082
+168,Scaptodrosophila lebanonensis,label_background,#4b0082
+169,Drosophila novamexicana,label_background,#4b0082
+170,Drosophila busckii,label_background,#4b0082
+171,Drosophila serrata,label_background,#4b0082
+172,Drosophila virilis,label_background,#4b0082
+173,Drosophila sechellia,label_background,#4b0082
+174,Drosophila pseudoobscura,label_background,#4b0082
+175,Drosophila persimili,label_background,#4b0082
+176,Drosophila navojoa,label_background,#4b0082
+177,Drosophila mojavensis,label_background,#4b0082
+178,Drosophila miranda,label_background,#4b0082
+179,Drosophila melanogaster,label_background,#4b0082
+180,Drosophila mauritiana,label_background,#4b0082
+181,Drosophila hydei,label_background,#4b0082
+182,Drosophila grimshawi,label_background,#4b0082
+183,Drosophila erecta,label_background,#4b0082
+184,Drosophila ananassae,label_background,#4b0082 0.5
+

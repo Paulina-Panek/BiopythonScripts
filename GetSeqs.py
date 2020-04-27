@@ -18,7 +18,7 @@ def CheckIfDuplicate(first_sequence_name, second_sequence_name, first_sequence, 
     # returns 0 (same sequences), 1 (not same sequences)
 
     return_value = 1
-    print(first_sequence_name, second_sequence_name)
+
     # if same species AND length of sequence is the same, check if the sequence is the same
     if (first_sequence_name == second_sequence_name):
         if first_sequence == second_sequence:
@@ -137,19 +137,19 @@ def Classify(ListRecords):
             file.write(sequence_title)
             file.write(new_sequence + "\n")
             if assignment == "(B)":
-                file3.write(str(counterRecs) + ".\tlabel_background\trgba(170,51,119,0.5)\n")
+                file3.write(str(counterRecs) + ".\tlabel_background\trgba(0, 255, 0 ,0.5)\n")
             if assignment == "(M)":
-                file3.write(str(counterRecs) + ".\tlabel_background\trgba(68,119,170,0.5)\n")
+                file3.write(str(counterRecs) + ".\tlabel_background\trgba(255, 127, 0, 0.5)\n")
             if assignment == "(P)":
-                file3.write(str(counterRecs) + ".\tlabel_background\trgba(102,204,238,0.5)\n")
+                file3.write(str(counterRecs) + ".\tlabel_background\trgba(255,0,0,0.5)\n")
             if assignment == "(I)":
-                file3.write(str(counterRecs) + ".\tlabel_background\trgba(187,187,187,0.5)\n")
+                file3.write(str(counterRecs) + ".\tlabel_background\trgba(75, 0, 130,0.5)\n")
             if assignment == "(R)":
-                file3.write(str(counterRecs) + ".\tlabel_background\trgba(34,136,51,0.5)\n")
+                file3.write(str(counterRecs) + ".\tlabel_background\trgba(255, 255, 0, 0.5)\n")
             if assignment == "(A)":
-                file3.write(str(counterRecs) + ".\tlabel_background\trgba(204,187,68,0.5)\n")
+                file3.write(str(counterRecs) + ".\tlabel_background\trgba(0, 0, 255, 0.5)\n")
             if assignment == "(F)":
-                file3.write(str(counterRecs) + ".\tlabel_background\trgba(238,102,119,0.5)\n")
+                file3.write(str(counterRecs) + ".\tlabel_background\trgba(148,0,211,0.5)\n")
 
             file4.write(str(counterRecs) + ".\t" + seq_record.annotations["source"] + "\t\t" + str(new_sequence_length) + "\t" + seq_record.annotations["date"] + "\t" + "\n\n")
 
