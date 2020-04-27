@@ -15,10 +15,10 @@ def numberRecords(ListRecords):
     print("Found %i records in initial file " % len(records))
 
 def CheckIfDuplicate(first_sequence_name, second_sequence_name, first_sequence, second_sequence):
-    # returns 0 (same sequences), 1 (not same sequences, or 3 (something went wrong, function didn't work
+    # returns 0 (same sequences), 1 (not same sequences)
 
-    return_value = 3
-
+    return_value = 1
+    print(first_sequence_name, second_sequence_name)
     # if same species AND length of sequence is the same, check if the sequence is the same
     if (first_sequence_name == second_sequence_name):
         if first_sequence == second_sequence:
@@ -52,7 +52,6 @@ file = open("AllSpecies.fasta", "w")
 file2 = open("TreeLabels.txt", "w")
 file3 = open("TreeColors.txt", "w")
 file4 = open("RepeatedReport.txt","w")
-file5 = open("allResults_classified.csv", "w")
 
 file2.write("LABELS\nSEPARATOR TAB\nDATA\n")  #writes a header for label file for Itol
 file3.write("TREE_COLORS\nSEPARATOR TAB\nDATA\n")
@@ -76,7 +75,7 @@ def Classify(ListRecords):
         duplicates = duplicates + 1
 
         # setting up initial vatiables
-        new_sequence_name = str(seq_record.seq) + "\n"
+        new_sequence_name = seq_record.annotations["source"]
         new_sequence_length = len(seq_record)
         new_sequence = str(seq_record.seq)
         assignment = "UNASSIGNED FIX ME"
@@ -153,7 +152,6 @@ def Classify(ListRecords):
                 file3.write(str(counterRecs) + ".\tlabel_background\trgba(238,102,119,0.5)\n")
 
             file4.write(str(counterRecs) + ".\t" + seq_record.annotations["source"] + "\t\t" + str(new_sequence_length) + "\t" + seq_record.annotations["date"] + "\t" + "\n\n")
-            file5.write(str(counterRecs) + "," + seq_record.description + seq_record.annotations["source"] + assignment + str(new_sequence_length))
 
             old_sequence_length = new_sequence_length
             old_sequence_name = new_sequence_name
@@ -169,7 +167,6 @@ def Classify(ListRecords):
     file2.close()
     file3.close()
     file4.close()
-    file5.close()
 
 Classify("arc_sequences_04202020.gp")
 

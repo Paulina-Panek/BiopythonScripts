@@ -65,7 +65,7 @@ def MakeExcel(ListRecords):
     for seq_record in SeqIO.parse(ListRecords, "gb"):  #for every record in the list
 
         # setting up initial vatiables
-        new_sequence_name = str(seq_record.seq) + "\n"
+        new_sequence_name = seq_record.annotations["source"]
         new_sequence_length = len(seq_record)
         new_sequence = str(seq_record.seq)
         assignment = "UNASSIGNED FIX ME"
@@ -113,15 +113,16 @@ def MakeExcel(ListRecords):
         counterRecs = counterRecs + 1  #counter of records
         recNumber = str(counterRecs)
         printname = seq_record.description
+        comment = " "
 
         if (CheckIfDuplicate(new_sequence_name, old_sequence_name, new_sequence, old_sequence) == 0):
-            recNumber = ("*REMOVED* Duplicate  " + recNumber)
+            comment = ("*REMOVED* Duplicate  " )
         elif (RemoveLike(prot_name)) == 1:
-            recNumber = ("*REMOVED* Like-protein  " + recNumber)
+            comment = ("*REMOVED* Like-protein  ")
         elif (Number_of_X != 0):
-            recNumber = ("*REMOVED* Unknown AAs  " + recNumber)
-        
-        file.write(recNumber + "," + printname + "," + seq_record.annotations["source"] + "," + assignment + "," + str(new_sequence_length) + "\n")
+            comment = ("*REMOVED* Unknown AAs  ")
+
+        file.write(recNumber + "," + printname + "," + seq_record.annotations["source"] + "," + assignment + "," + str(new_sequence_length) + "," + seq_record.id+ ","+ comment +"\n")
 
         old_sequence_length = new_sequence_length
         old_sequence_name = new_sequence_name
